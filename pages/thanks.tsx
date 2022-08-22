@@ -36,6 +36,7 @@ const ThanksContainer = styled.div`
 export default function Thanks() {
   return (
     <BodyWrapper>
+        
       <ThanksContainer>
         <h1>Thank you</h1>
         <p>
