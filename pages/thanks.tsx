@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { BodyWrapper, ImageContainer } from "../components/UIcomponents";
 
 const ThanksContainer = styled.div`
+
   width: 80vw;
   height: 100vh;
   text-align: center;
@@ -31,12 +32,13 @@ const ThanksContainer = styled.div`
     margin: 2.2rem 0px;
     font-size: 1rem;
   }
+  
 `;
 
 export default function Thanks() {
   return (
     <BodyWrapper>
-        
+
       <ThanksContainer>
         <h1>Thank you</h1>
         <p>
