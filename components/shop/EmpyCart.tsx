@@ -3,39 +3,40 @@ import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
 
-export default function EmpyCart() {
-
-  const EmptyCardContainer = styled.div`
+const EmptyCardContainer = styled.div`
     
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
+display: flex;
+flex-direction: column;
+align-items:center;
+justify-content:center;
+text-align:center;
 
-    width: 50%;
-    min-height: 40rem;
-    border-radius: 5px;
-    background-color: white;
-    border: 2px white solid;
+width: 50%;
+min-height: 40rem;
+border-radius: 5px;
+background-color: white;
+border: 2px white solid;
 
-    @media (max-width: 576px) {
-      width: 90%;
-    }
+@media (max-width: 576px) {
+  width: 90%;
+}
 
-    h1{
-        font-size: 1.5rem;
-    }
+h1{
+    font-size: 1.5rem;
+}
 
-    p{
-        margin: 1rem 0
-    }
+p{
+    margin: 1rem 0
+}
 
-  `;
+`;
 
 const EmptyContainer = styled.div`
-    width: 55%;
+width: 55%;
 `
+
+
+export default function EmpyCart() {
 
   return(
     <EmptyCardContainer>
