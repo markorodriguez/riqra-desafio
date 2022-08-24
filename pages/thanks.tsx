@@ -19,18 +19,18 @@ const ThanksContainer = styled.div`
 
   h1 {
     margin: 2rem 0;
-    font-size: 2.4rem;
+    font-size: 3.2rem;
     font-weight: 500;
   }
 
   p {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   a {
     color: blue;
     margin: 2.2rem 0px;
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
   
 `;

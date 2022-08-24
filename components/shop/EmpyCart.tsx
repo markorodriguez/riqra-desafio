@@ -12,7 +12,7 @@ justify-content:center;
 text-align:center;
 
 width: 50%;
-min-height: 40rem;
+height: 70rem;
 border-radius: 5px;
 background-color: white;
 border: 2px white solid;
@@ -22,17 +22,18 @@ border: 2px white solid;
 }
 
 h1{
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 p{
-    margin: 1rem 0
+    margin: 1rem 0;
+    font-size: 1.4rem;
 }
 
 `;
 
 const EmptyContainer = styled.div`
-width: 55%;
+width: 35%;
 `
 
 

@@ -1,26 +1,32 @@
 import { useState } from "react";
 import type { NextPage } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 import styled from "styled-components";
 
 import { BodyWrapper } from "../components/UIcomponents";
 import EmpyCart from "../components/shop/EmpyCart";
+import ProductItem from "../components/shop/ProductItem";
+
 import { IOrderDetail } from "../models/interfaces/IOrderDetail";
 
+
 const ShopContainer = styled.div`
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
   width: 85vw;
-  min-height: 100vh;
+  height: 90vh;
   margin: 0 auto;
 
   @media (max-width: 576px) {
     width: 90vw;
     flex-direction: column;
+    height: 100%;
   }
 `;
 
@@ -29,7 +35,7 @@ const CartContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 70rem;
   width: 65%;
   @media (max-width: 576px) {
     width: 90%;
@@ -38,8 +44,9 @@ const CartContainer = styled.div`
 
 const OrderContainer = styled.div`
   margin: 5rem 0;
+
   text-align: center;
-  width: 35%;
+  width: 25%;
   @media (max-width: 576px) {
     width: 90%;
   }
@@ -48,18 +55,19 @@ const OrderContainer = styled.div`
 const DeliveryInfo = styled.div`
   display: flex;
   justify-content: center;
+  font-size:1.6rem;
 
   p {
-    margin: 0 1rem;
+    margin: 0 2rem;
   }
 `;
 
 const ShopInput = styled.input`
-  margin: 1rem 0;
-  padding: 0 1rem;
+  margin: 3rem 0;
+  padding: 0 1.5rem;
   width: 50%;
-  height: 3.5rem;
-  font-size: 1rem;
+  height: 5.5rem;
+  font-size: 1.5rem;
   border-radius: 5px;
   border: 2px #dddddd solid;
 
@@ -78,8 +86,9 @@ const ShopInput = styled.input`
 `;
 
 const ShopCart = styled.div`
+  overflow-y: scroll;
   width: 50%;
-  height: auto;
+  height: 100%;
   min-height: 40rem;
   border-radius: 5px;
   background-color: white;
@@ -98,6 +107,7 @@ padding: 0.5rem 2.5rem;
 `;
 
 const OrderDetails = styled.div<IOrderDetail>`
+font-size: 1.4rem;
 margin: 0.5rem 0;
   display: flex;
   flex-direction: row;
@@ -112,7 +122,7 @@ const ShopButton = styled.button`
  border-radius: 4px;
  padding: 1rem 0;
  color: white;
- font-size: 1.1rem;
+ font-size: 1.4rem;
  letter-spacing: 1px;
  text-transform: uppercase;
  transition: .2s ease-in-out all;
@@ -141,14 +151,16 @@ const Home: NextPage = () => {
             }}
             placeholder="Search products ..."
           />
-          {product.length > 0 ? <ShopCart /> : <EmpyCart />}
+          {product.length > 0 ? <ShopCart>
+            <ProductItem/><ProductItem/><ProductItem/><ProductItem/><ProductItem/><ProductItem/><ProductItem/><ProductItem/><ProductItem/><ProductItem/><ProductItem/><ProductItem/><ProductItem/><ProductItem/><ProductItem/><ProductItem/><ProductItem/><ProductItem/><ProductItem/>
+          </ShopCart> : <EmpyCart />}
         </CartContainer>
 
         <OrderContainer>
           <DeliveryInfo>
             <Image
               src="/images/car.png"
-              width={30}
+              width={20}
               height={10}
               alt="image_thankyou"
             />
@@ -158,25 +170,29 @@ const Home: NextPage = () => {
           </DeliveryInfo>
 
           <OrderDetailsContainer>
+            
             <OrderDetails  highlighted={false}>
               <p>Products</p>
-              <span>765</span>
+              <span>$ 765</span>
             </OrderDetails>
             <OrderDetails highlighted>
               <p>Shipping Cost</p>
-              <span>765</span>
+              <span>$ 765</span>
             </OrderDetails>
             <OrderDetails highlighted={false}>
               <p>Taxes</p>
-              <span>765</span>
+              <span>$ 765</span>
             </OrderDetails>
             <OrderDetails highlighted={false}>
               <p>Total</p>
-              <TotalAmount>765</TotalAmount>
+              <TotalAmount>$ 765</TotalAmount>
             </OrderDetails>
           </OrderDetailsContainer>
 
+            <Link href="/thanks">
             <ShopButton>Complete Order</ShopButton>
+            </Link>
+          
 
         </OrderContainer>
       </ShopContainer>
